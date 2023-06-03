@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dodaj stację</title>
+</head>
+<body>
+    <h1>Dodaj stację</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Dodaj</button>
+    </form>
+    <a href="{% url 'stations:station-list' %}">Powrót do listy stacji</a>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista stacji</title>
+</head>
+<body>
+    <h1>Lista stacji</h1>
+    <ul>
+        {% for station in stations %}
+            <li>{{ station.name }} - {{ station.address }} ({{ station.city.name }})</li>
+        {% empty %}
+            <li>Brak stacji</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'stations:station-create' %}">Dodaj stację</a>
+</body>
+</html>
